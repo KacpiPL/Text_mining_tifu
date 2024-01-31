@@ -10,7 +10,7 @@ The objective of the Reddit TIFU DataFrame project in text mining is to comprehe
 
 ## Data Source
 
-Our analysis is fueled by data sourced from [huggingface.co]([http://insideairbnb.com/](https://huggingface.co/datasets/reddit_tifu?row=77)). We used datasets library to import this dataset directly from the python.
+Our analysis is fueled by data sourced from [huggingface.co]([http://insideairbnb.com/](https://huggingface.co/datasets/reddit_tifu?row=77). We used datasets library to import this dataset directly from the python.
 
 ## Data frame
 
