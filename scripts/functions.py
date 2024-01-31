@@ -96,9 +96,9 @@ def plot_tsne_pca_emb(data, labels):
     
     tsne = TSNE().fit_transform(pca)  # Use PCA output for t-SNE
 
-    idx = np.random.choice(range(pca.shape[0]), size=300, replace=False)
+    idx = np.random.choice(range(pca.shape[0]), size=1500, replace=False)
     label_subset = labels[max_items]
-    label_subset = [plt.cm.hsv(i / max_label) for i in label_subset[idx]]
+    label_subset = [plt.cm.hsv(i / max_label + 1) for i in label_subset[idx]]
 
     f, ax = plt.subplots(1, 2, figsize=(14, 6))
 
