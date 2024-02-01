@@ -1,4 +1,8 @@
-# Reddit TIFU
+# TextMining
+
+Projects for Text Mining and Social Media Mining course
+
+# Reddit TIFU project
 
 ## Project Overview
 
