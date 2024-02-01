@@ -10,7 +10,7 @@ The objective of the Reddit TIFU DataFrame project in text mining is to comprehe
 
 ## Data Source
 
-Our analysis is fueled by data sourced from [huggingface.co]([http://insideairbnb.com/](https://huggingface.co/datasets/reddit_tifu?row=77)). We used "datasets" library to import this dataset directly from the python.
+Our analysis is fueled by data sourced from [huggingface.co](https://huggingface.co/datasets/reddit_tifu?row=77). We used "datasets" library to import this dataset directly from the python.
 
 When it comes to the classification problem we scraped the thread TIFU using [apify.com](https://apify.com/trudax/reddit-scraper) scraper, which is available for free for one day. This way we were able to get the over18 column and perform classification on it.
 
