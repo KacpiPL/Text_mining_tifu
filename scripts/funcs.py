@@ -87,25 +87,28 @@ def get_top_keywords(data, clusters, feature_names, n_terms):
 
 def plot_tsne_pca_emb(data, labels):
     max_label = max(labels)
-    max_items = np.random.choice(range(data.shape[0]), size=3000, replace=False)
+    max_items = np.random.choice(range(data.shape[0]), size=42137, replace=False)
 
     data_subset = np.asarray(data[max_items, :])
 
-    n_components_pca = min(data_subset.shape[0], data_subset.shape[1])  # Adjusted line
+    n_components_pca = min(data_subset.shape[0], data_subset.shape[1])
     pca = PCA(n_components=n_components_pca).fit_transform(data_subset)
-    
-    tsne = TSNE().fit_transform(pca)  # Use PCA output for t-SNE
+
+    tsne = TSNE().fit_transform(pca)
 
     idx = np.random.choice(range(pca.shape[0]), size=1500, replace=False)
     label_subset = labels[max_items]
-    label_subset = [plt.cm.hsv(i / max_label + 1) for i in label_subset[idx]]
+    unique_labels = np.unique(label_subset)
+
+    palette = sns.color_palette("husl", n_colors=len(unique_labels))
+    label_colors = [palette[label - 1] for label in label_subset[idx]]
 
     f, ax = plt.subplots(1, 2, figsize=(14, 6))
 
-    ax[0].scatter(pca[idx, 0], pca[idx, 1], c=label_subset)
+    ax[0].scatter(pca[idx, 0], pca[idx, 1], c=label_colors)
     ax[0].set_title('PCA Cluster Plot')
 
-    ax[1].scatter(tsne[idx, 0], tsne[idx, 1], c=label_subset)
+    ax[1].scatter(tsne[idx, 0], tsne[idx, 1], c=label_colors)
     ax[1].set_title('t-SNE Cluster Plot')
 
 def plot_3d_pca_tsna_emb(data, labels):
